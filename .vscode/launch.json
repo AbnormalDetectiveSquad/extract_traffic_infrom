@@ -1,0 +1,29 @@
+{
+    // VSCode Launch configuration
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // 1) 빌드 & 디버그 (LLDB)
+            "type": "lldb",
+            "request": "launch",
+            "name": "Cargo build & debug",
+            
+            // Cargo 빌드 파트
+            "cargo": {
+                "args": [
+                    "build"  // <-- 실행 파일이 생기도록 build (혹은 --bin extract_traffic_infrom)
+                ]
+            },
+            
+            // 실제 디버그할 실행파일
+            // 빌드 후에 target/debug/extract_traffic_infrom 가 생길 것
+            "program": "${workspaceFolder}/target/debug/extract_traffic_infrom",
+            
+            // 디버그 작업 디렉토리
+            "cwd": "${workspaceFolder}",
+
+            // 디버그 실행시 넘길 인자 (필요 없다면 [])
+            "args": []
+        }
+    ]
+}
